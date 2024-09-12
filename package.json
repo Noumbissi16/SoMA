@@ -29,7 +29,6 @@
     "react-intersection-observer": "^9.13.1",
     "react-router-dom": "^6.26.1",
     "solidjs-dropzone": "^1.0.0",
-    "soma": "file:",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.23.8"
