@@ -1,15 +1,39 @@
 import { Client, Account, Databases, Storage, Avatars } from "appwrite";
 
-export const appwriteConfig = {
-  url: import.meta.env.VITE_APPWRITE_URL,
-  projectId: import.meta.env.VITE_APPWRITE_PROJECT_ID,
-  databaseId: import.meta.env.VITE_APPWRITE_DATABASE_ID,
-  storageId: import.meta.env.VITE_APPWRITE_STORAGE_ID,
-  userCollectionId: import.meta.env.VITE_APPWRITE_USER_COLLECTION_ID,
-  postCollectionId: import.meta.env.VITE_APPWRITE_POST_COLLECTION_ID,
-  savesCollectionId: import.meta.env.VITE_APPWRITE_SAVES_COLLECTION_ID,
-};
+function checkEnvVariable(name: string, value: string) {
+  if (!value) {
+    throw new Error(`Environment variable ${name} is missing or undefined.`);
+  }
+  return value;
+}
 
+export const appwriteConfig = {
+  url: checkEnvVariable("VITE_APPWRITE_URL", import.meta.env.VITE_APPWRITE_URL),
+  projectId: checkEnvVariable(
+    "VITE_APPWRITE_PROJECT_ID",
+    import.meta.env.VITE_APPWRITE_PROJECT_ID
+  ),
+  databaseId: checkEnvVariable(
+    "VITE_APPWRITE_DATABASE_ID",
+    import.meta.env.VITE_APPWRITE_DATABASE_ID
+  ),
+  storageId: checkEnvVariable(
+    "VITE_APPWRITE_STORAGE_ID",
+    import.meta.env.VITE_APPWRITE_STORAGE_ID
+  ),
+  userCollectionId: checkEnvVariable(
+    "VITE_APPWRITE_USER_COLLECTION_ID",
+    import.meta.env.VITE_APPWRITE_USER_COLLECTION_ID
+  ),
+  postCollectionId: checkEnvVariable(
+    "VITE_APPWRITE_POST_COLLECTION_ID",
+    import.meta.env.VITE_APPWRITE_POST_COLLECTION_ID
+  ),
+  savesCollectionId: checkEnvVariable(
+    "VITE_APPWRITE_SAVES_COLLECTION_ID",
+    import.meta.env.VITE_APPWRITE_SAVES_COLLECTION_ID
+  ),
+};
 export const client = new Client();
 
 client.setEndpoint(appwriteConfig.url);

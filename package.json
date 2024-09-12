@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -16,9 +16,9 @@
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-tabs": "^1.1.0",
     "@radix-ui/react-toast": "^1.2.1",
-    "@tanstack/react-query": "^5.55.0",
-    "@tanstack/react-query-devtools": "^5.55.0",
-    "appwrite": "^15.0.0",
+    "@tanstack/react-query": "^4.36.1",
+    "@tanstack/react-query-devtools": "^4.35.7",
+    "appwrite": "^13.0.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.439.0",
@@ -29,6 +29,7 @@
     "react-intersection-observer": "^9.13.1",
     "react-router-dom": "^6.26.1",
     "solidjs-dropzone": "^1.0.0",
+    "soma": "file:",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.23.8"
